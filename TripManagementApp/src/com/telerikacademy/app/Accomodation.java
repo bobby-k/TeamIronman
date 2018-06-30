@@ -1,5 +1,5 @@
 package com.telerikacademy.app;
 
-public class Accomodation extends TripActivity{
-  private
+public class Accomodation extends TripActivity {
+  private String name;
 }
