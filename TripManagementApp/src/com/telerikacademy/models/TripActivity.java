@@ -53,4 +53,4 @@ public abstract class TripActivity {
     public abstract void printInfo();
 
   }
-}
+
