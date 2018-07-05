@@ -1,17 +1,54 @@
 package com.telerikacademy.models;
 
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
+
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 public abstract class TripActivity {
-    private String name;
-    private LocalDate startDate;
-    private LocalDate endDate;
-    private long period;
+  private String name;
+  private LocalDate startDate;
+  private LocalDate endDate;
+  //period in days
+  private long period;
+
+  //long period=ChronoUnit.DAYS.between(dateTwo,dateOne);
+
+  public TripActivity(String name, LocalDate startDate, LocalDate endDate) {
+    setName(name);
+    setStartDate(startDate);
+    setEndDate(endDate);
+    setPeriod(ChronoUnit.DAYS.between(startDate, endDate));
+  }
+
+  public TripActivity(String name, LocalDate startDate, long period) {
+    this(name, startDate, startDate.plusDays(period));
+    setPeriod(period);
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  private void setName(String name) {
+    this.name = name;
+  }
+
+  public LocalDate getStartDate() {
+    return startDate;
+  }
+
+  private void setStartDate(LocalDate startDate) {
+    this.startDate = startDate;
+  }
+
+  public LocalDate getEndDate() {
+    return endDate;
+  }
+
+  private void setEndDate(LocalDate endDate) {
+    this.endDate = endDate;
+  }
 
   public long getPeriod() {
     return period;
@@ -20,48 +57,9 @@ public abstract class TripActivity {
   public void setPeriod(long period) {
     this.period = period;
   }
+  //public abstract void getNotification();
 
+  public abstract void printInfo();
 
-
-    //long period=ChronoUnit.DAYS.between(dateTwo,dateOne);
-
-
-    public TripActivity(String name) {
-      setName(name);
-    }
-
-    public TripActivity(String name, LocalDate startDate, LocalDate endDate){
-      setName(name);
-      setStartDate(startDate);
-      setEndDate(endDate);
-    }
-
-    public String getName() {
-      return name;
-    }
-
-    private void setName(String name) {
-      this.name = name;
-    }
-
-    public LocalDate getStartDate() {
-      return startDate;
-    }
-
-    private void setStartDate(LocalDate startDate) {
-      this.startDate = startDate;
-    }
-
-    public LocalDate getEndDate() {
-      return endDate;
-    }
-
-    private void setEndDate(LocalDate endDate) {
-      this.endDate = endDate;
-    }
-    //Кой метод да override-vame????
-    public abstract void getNotification();
-    public abstract void printInfo();
-
-  }
+}
 
