@@ -1,4 +1,4 @@
-package com.telerikacademy.app;
+package com.telerikacademy.models;
 
 import com.telerikacademy.enumerations.TransportType;
 
