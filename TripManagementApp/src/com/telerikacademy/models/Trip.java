@@ -12,6 +12,28 @@ public class Trip {
   private Date startDate;
   private Date endDate;
   private Budget budget;
+  private Date tripStart;
+  private Date tripEnd;
+  private ArrayList<TripActivity> eventsList;
+  //SimpleDateFormat dateFormat=new SimpleDateFormat("dd/MM/yyyy");
+
+  public TripType getTripType() {
+    return tripType;
+  }
+
+  public void setTripType(TripType tripType) {
+    this.tripType = tripType;
+  }
+
+  public int getTravelers() {
+    return travelers;
+  }
+
+  public void setTravelers(int travelers) {
+    this.travelers = travelers;
+  }
+
+  private int travelers;
 
   public ArrayList<String> getDestinations() {
     return destinations;
@@ -64,10 +86,7 @@ public class Trip {
     this.tripEnd = tripEnd;
   }
 
-  private Date tripStart;
-  private Date tripEnd;
-  private ArrayList<Event> eventsList;
-  //SimpleDateFormat dateFormat=new SimpleDateFormat("dd/MM/yyyy");
+
 
 
   public Trip(String tripName,Date tripStart,Date tripEnd) {
@@ -85,11 +104,11 @@ public class Trip {
     this.tripName = tripName;
   }
 
-  public ArrayList<Event> getEventsList() {
+  public ArrayList<TripActivity> getEventsList() {
     return eventsList;
   }
 
-  public void setEventsList(ArrayList<Event> eventsList) {
+  public void setEventsList(ArrayList<TripActivity> eventsList) {
     this.eventsList = eventsList;
   }
 
