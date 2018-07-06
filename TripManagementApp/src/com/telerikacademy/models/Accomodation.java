@@ -2,8 +2,11 @@ package com.telerikacademy.models;
 
 import java.time.LocalDate;
 
-public class Accomodation extends TripActivity {
-  private String name;
+public class Accomodation extends TripActivity implements Reservable,Payable {
+  private String location;
+  private String address;
+  private double price;
+  private AccomodationType accomodationType;
 
   public Accomodation(String name, LocalDate startDate, LocalDate endDate) {
     super(name, startDate, endDate);
@@ -15,6 +18,16 @@ public class Accomodation extends TripActivity {
 
   @Override
   public void printInfo() {
+
+  }
+
+  @Override
+  public void addReservationDetails() {
+
+  }
+
+  @Override
+  public void receivePaymentDetails() {
 
   }
 }
