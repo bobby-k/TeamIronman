@@ -34,7 +34,7 @@ public class LoginMenu extends Menu {
         }
         switch (option) {
             case 1:
-                //do something
+
                 break;
             case 2:
                 //do something
