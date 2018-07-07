@@ -1,4 +1,4 @@
-package com.telerikacademy.Menus;
+package com.telerikacademy.menus;
 
 
 public abstract class Menu {

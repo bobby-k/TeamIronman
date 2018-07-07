@@ -1,6 +1,7 @@
 package com.telerikacademy.models;
 
 import com.telerikacademy.exceptions.IncorrectInputException;
+import com.telerikacademy.menus.MainMenu;
 import com.telerikacademy.users.User;
 
 import java.text.ParseException;
@@ -81,7 +82,7 @@ public class Application {
                     currentUser = user;
                     System.out.println("Login successful. ");
                     System.out.println();
-                    //new MainMenu TO DO
+                    //TO DO new mainmenu;
                     break;
                 } else {
                     System.out.println("Incorrect password! ");
