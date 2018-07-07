@@ -1,9 +1,15 @@
 package com.telerikacademy.Menus;
 
+import com.telerikacademy.models.Application;
+
 import java.util.Scanner;
 
 public class MainMenu extends Menu {
     Scanner sc = new Scanner(System.in);
+
+    public MainMenu(Application app) {
+        super(app);
+    }
 
 
     @Override
