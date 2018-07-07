@@ -1,4 +1,4 @@
-package com.telerikacademy.Menus;
+package com.telerikacademy.menus;
 
 
 import com.telerikacademy.models.Application;
