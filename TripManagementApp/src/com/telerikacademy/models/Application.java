@@ -1,6 +1,7 @@
 package com.telerikacademy.models;
 
 import com.telerikacademy.exceptions.IncorrectInputException;
+import com.telerikacademy.menus.LoginMenu;
 import com.telerikacademy.menus.MainMenu;
 import com.telerikacademy.users.User;
 

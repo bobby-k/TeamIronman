@@ -4,48 +4,48 @@ import com.telerikacademy.models.Application;
 
 import java.util.Scanner;
 
-public class MainMenu extends Menu {
+public class LoginMenu extends Menu {
     Scanner sc = new Scanner(System.in);
 
-    public MainMenu(Application app) {
+    public LoginMenu(Application app) {
         super(app);
     }
 
 
     @Override
     public void printMenu() {
-        String[] options = {"Option 1: Create new trip",
-                "Option 2: Edit current trip",
-                "Option 3: View current trip",
-                "Option 4: View history"};
+        String[] options = {"Option 1: Login",
+                "Option 2: Sign up",
+                "Option 3: Exit",
+                "Insert a digit to select menu option:"};
+
+        for (int i = 0; i < options.length; i++) {
+            System.out.println(options[i]);
+        }
+
     }
 
     @Override
     public void selectOptions() {
         int option = 0;
-        while (option <= 0 || option > 4) {
+        while (option <= 0 || option > 3) {
             printMenu();
             option = sc.nextInt();
         }
         switch (option) {
             case 1:
-                //do something in future
+            getApp().logIn();
                 break;
             case 2:
-                //do something in future
+                //do something
                 break;
             case 3:
-                //do something in future
+                //do something
                 break;
-            case 4:
-                //do something in future
-                break;
-
 
         }
-
-
     }
+
 }
 
 
