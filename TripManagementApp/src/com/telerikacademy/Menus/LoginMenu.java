@@ -42,8 +42,7 @@ public class LoginMenu extends Menu {
             case 3:
                 //do something
                 break;
-            default:
-                //ako ne izbere ot tezi
+
         }
     }
 

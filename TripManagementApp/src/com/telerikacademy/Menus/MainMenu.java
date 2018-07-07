@@ -41,8 +41,7 @@ public class MainMenu extends Menu {
             case 4:
                 //do something in future
                 break;
-            default:
-                //ako ne izbere ot tezi
+
 
         }
 
