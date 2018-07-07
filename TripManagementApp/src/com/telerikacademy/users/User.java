@@ -2,6 +2,10 @@ package com.telerikacademy.users;
 
 
 import com.telerikacademy.exceptions.IncorrectInputException;
+import com.telerikacademy.models.Trip;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class User {
     //constants
@@ -14,7 +18,7 @@ public class User {
     private String password;
     private String fullName;
     private String email;
-    //private list trips or something like that
+    private List<Trip> trips;
 
     //constructors
     public User(String account, String password, String fullName, String email) throws IncorrectInputException {
@@ -22,6 +26,7 @@ public class User {
         setPassword(password);
         setFullName(fullName);
         setEmail(email);
+        setTrips(new ArrayList<>());
     }
 
     //setters and getters
@@ -78,4 +83,13 @@ public class User {
         }
         this.email = email;
     }
+
+    public List<Trip> getTrips() {
+        return trips;
+    }
+
+    private void setTrips(List<Trip> trips) {
+        this.trips = trips;
+    }
 }
+
