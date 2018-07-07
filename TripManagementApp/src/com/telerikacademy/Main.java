@@ -16,6 +16,7 @@ public class Main {
     try {
       User testUser = new User("testing", "testing", "Test Test", "test@abv.bg");
       Application application = new Application("test");
+      application.getUsers().add(testUser);
       Menu menu = new LoginMenu(application);
       menu.selectOptions();
     } catch (IncorrectInputException e) {
