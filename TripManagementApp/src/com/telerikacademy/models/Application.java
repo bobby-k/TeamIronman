@@ -1,6 +1,7 @@
 package com.telerikacademy.models;
 
 import com.telerikacademy.exceptions.IncorrectInputException;
+import com.telerikacademy.menus.LoginMenu;
 import com.telerikacademy.menus.MainMenu;
 import com.telerikacademy.users.User;
 
@@ -82,7 +83,7 @@ public class Application {
                     currentUser = user;
                     System.out.println("Login successful. ");
                     System.out.println();
-                    //TO DO new mainmenu;
+                    new MainMenu(this).selectOptions();
                     break;
                 } else {
                     System.out.println("Incorrect password! ");
@@ -139,7 +140,7 @@ public class Application {
         System.out.println("Logout successful! ");
         System.out.println();
         currentUser = null;
-        //new LogInMenu TO DO
+        new LoginMenu(this).selectOptions();
     }
 
     public void createTripActivity() throws ParseException {

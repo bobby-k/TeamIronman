@@ -24,6 +24,7 @@ public class MainMenu extends Menu {
     public void selectOptions() {
         int option = 0;
         while (option <= 0 || option > 4) {
+            System.out.println("test");
             printMenu();
             option = sc.nextInt();
         }
