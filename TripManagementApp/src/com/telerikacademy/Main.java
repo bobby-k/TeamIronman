@@ -1,7 +1,7 @@
 package com.telerikacademy;
 
+
 import com.telerikacademy.exceptions.IncorrectInputException;
-import com.telerikacademy.menus.LoginMenu;
 import com.telerikacademy.menus.Menu;
 import com.telerikacademy.models.Application;
 import com.telerikacademy.users.User;
@@ -18,6 +18,7 @@ public class Main {
     } catch (IncorrectInputException e) {
       System.out.println(e.getMessage());
     }
+
 
 
   }
