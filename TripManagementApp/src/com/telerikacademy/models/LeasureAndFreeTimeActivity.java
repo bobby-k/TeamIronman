@@ -1,5 +1,7 @@
 package com.telerikacademy.models;
 
+import com.telerikacademy.enumerations.LeisureActivityType;
+
 import java.time.LocalDate;
 
 public class LeasureAndFreeTimeActivity extends  TripActivity implements Attendable{

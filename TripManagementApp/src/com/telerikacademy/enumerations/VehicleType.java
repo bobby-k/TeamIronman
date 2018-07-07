@@ -1,5 +1,6 @@
-package com.telerikacademy.models;
+package com.telerikacademy.enumerations;
 
-public enum TransportationType {
+public enum VehicleType {
   AIRPLANE,TRAIN,BUS,PRIVATE_CAR,RENT_A_CAR,SHATTLE_BUS,CRUISE,BOAT,PUBLIC_TRANSPORT,
+
 }

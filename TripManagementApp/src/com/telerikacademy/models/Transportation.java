@@ -1,12 +1,11 @@
 package com.telerikacademy.models;
 
-import com.telerikacademy.enumerations.TransportType;
+import com.telerikacademy.enumerations.VehicleType;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 public class Transportation extends TripActivity {
-  private TransportType transportType;
+  private VehicleType transportType;
   private double distance;
   private double duration;
   private double price;

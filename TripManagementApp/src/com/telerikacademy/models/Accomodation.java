@@ -1,5 +1,7 @@
 package com.telerikacademy.models;
 
+import com.telerikacademy.enumerations.AccomodationType;
+
 import java.time.LocalDate;
 
 public class Accomodation extends TripActivity implements Reservable,Payable {

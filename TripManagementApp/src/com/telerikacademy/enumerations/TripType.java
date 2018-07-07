@@ -1,4 +1,4 @@
-package com.telerikacademy.models;
+package com.telerikacademy.enumerations;
 
 public enum TripType {
   BUSSINESS,FAMILY,CAR

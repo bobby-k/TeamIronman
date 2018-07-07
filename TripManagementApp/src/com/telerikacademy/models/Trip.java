@@ -1,6 +1,8 @@
 package com.telerikacademy.models;
 
 
+import com.telerikacademy.enumerations.TripType;
+
 import java.util.ArrayList;
 import java.util.Date;
 
