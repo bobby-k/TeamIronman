@@ -10,6 +10,9 @@ public abstract class Menu {
         this.app = app;
     }
 
+    public Application getApp() {
+        return app;
+    }
 
     public abstract void printMenu();
 
