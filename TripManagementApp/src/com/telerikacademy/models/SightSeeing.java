@@ -10,6 +10,7 @@ public class SightSeeing extends TripActivity implements Payable{
   }
 
   public SightSeeing(String name, LocalDate startDate, long period) {
+
     super(name, startDate, period);
   }
 
