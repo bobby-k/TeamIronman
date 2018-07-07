@@ -8,10 +8,10 @@ public class MainMenu extends Menu {
 
     @Override
     public void printMenu() {
-        String[] options = {"Create new trip",
-                "Edit current trip",
-                "View current trip",
-                "View history"};
+        String[] options = {"Option 1: Create new trip",
+                "Option 2: Edit current trip",
+                "Option 3: View current trip",
+                "Option 4: View history"};
     }
 
     @Override
