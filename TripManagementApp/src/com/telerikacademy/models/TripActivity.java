@@ -2,29 +2,25 @@ package com.telerikacademy.models;
 
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
-import java.util.Date;
 
 public abstract class TripActivity {
   private String name;
-  private LocalDate startDate;
-  private LocalDate endDate;
-  //period in days
+  private LocalDateTime startTime;
+  private LocalDateTime endTime;
+  //period in hours
   private long period;
 
   //long period=ChronoUnit.DAYS.between(dateTwo,dateOne);
 
-  public TripActivity(String name, LocalDate startDate, LocalDate endDate) {
+  public TripActivity(String name, LocalDateTime startDate, LocalDateTime endDate) {
     setName(name);
-    setStartDate(startDate);
-    setEndDate(endDate);
-    setPeriod(ChronoUnit.DAYS.between(startDate, endDate));
+    setStartTime(startDate);
+    setEndTime(endDate);
+    setPeriod(ChronoUnit.HOURS.between(startDate,endDate));
   }
 
-  public TripActivity(String name, LocalDate startDate, long period) {
-    this(name, startDate, startDate.plusDays(period));
-    setPeriod(period);
-  }
 
   public String getName() {
     return name;
@@ -34,27 +30,27 @@ public abstract class TripActivity {
     this.name = name;
   }
 
-  public LocalDate getStartDate() {
-    return startDate;
+  public LocalDateTime getStartTime() {
+    return startTime;
   }
 
-  private void setStartDate(LocalDate startDate) {
-    this.startDate = startDate;
+  private void setStartTime(LocalDateTime startTime) {
+    this.startTime = startTime;
   }
 
-  public LocalDate getEndDate() {
-    return endDate;
+  public LocalDateTime getEndTime() {
+    return endTime;
   }
 
-  private void setEndDate(LocalDate endDate) {
-    this.endDate = endDate;
+  private void setEndTime(LocalDateTime endTime) {
+    this.endTime = endTime;
   }
 
   public long getPeriod() {
     return period;
   }
 
-  private void setPeriod(long period) {
+  protected void setPeriod(long period) {
     this.period = period;
   }
   //public abstract void getNotification();

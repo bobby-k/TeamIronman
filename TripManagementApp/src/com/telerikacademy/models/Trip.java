@@ -10,47 +10,31 @@ import java.util.TreeMap;
 public class Trip {
 
   private String tripName;
-  private ArrayList<String> destinations;
+  private String destination;
   private LocalDate startDate;
   private LocalDate endDate;
   private double budget;
+  private int travelers;
   private TreeMap<LocalDateTime, String> tripActivities;
   private long period;
 
 
-  public Trip(String tripName, LocalDate startDate, LocalDate endDate) {
-    this(tripName,startDate,endDate,0);
-
-  }
-  public Trip(String tripName, LocalDate startDate, long period) {
-    this(tripName,startDate,period,0);
-  }
 
   public Trip(String tripName,
-              LocalDate startDate,
-              long period,
-              double budget) {
-    setTripName(tripName);
-    setStartDate(startDate);
-    setPeriod(period);
-    setEndDate(startDate.plusDays(period));
-    setTripActivities(new TreeMap<LocalDateTime, String>());
-    setDestinations(new ArrayList<>());
-    this.budget = budget;
-
-  }
-  public Trip(String tripName,
+              String destination,
               LocalDate startDate,
               LocalDate endDate,
-              double budget) {
+              double budget,
+              int travelers)
+  {
     setTripName(tripName);
-    setStartDate(startDate);
+    setDestination(destination);
     setStartDate(startDate);
     setEndDate(endDate);
-    long period=ChronoUnit.DAYS.between(startDate,endDate);
-    setDestinations(new ArrayList<>());
     setTripActivities(new TreeMap<LocalDateTime, String>());
     this.budget = budget;
+    setTravelers(travelers);
+    long period=ChronoUnit.DAYS.between(startDate,endDate);
 
   }
 
@@ -79,14 +63,14 @@ public class Trip {
   }
 
 
-  private int travelers;
 
-  public ArrayList<String> getDestinations() {
-    return destinations;
+
+  public String getDestination() {
+    return destination;
   }
 
-  public void setDestinations(ArrayList<String> destinations) {
-    this.destinations = destinations;
+  public void setDestination(String destination) {
+    this.destination = destination;
   }
 
 
@@ -114,17 +98,11 @@ public class Trip {
     this.budget = budget;
   }
 
+  public int getTravelers() {
+    return travelers;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
+  public void setTravelers(int travelers) {
+    this.travelers = travelers;
+  }
 }
