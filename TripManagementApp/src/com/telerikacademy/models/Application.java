@@ -9,13 +9,14 @@ import com.telerikacademy.users.User;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class Application {
   // private final static String DATE_FORMAT = "dd-MM-yyyy";
   //private final static String TIME_FORMAT = "HH:mm";
-  private final static String OLD_FORMAT = "HH:mm yyyy/MM/dd";
+  private final static String OLD_FORMAT = "yyyy/MM/dd";
   //private final static String NEW_FORMAT = "yyyy/MM/dd HH:mm";
 
   //SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
@@ -165,19 +166,17 @@ public class Application {
                 break;
             }
         }
-        System.out.println("Enter start date in format dd/MM/yyyy: ");
+        System.out.printf("Enter start date in format %s: \n", OLD_FORMAT);
         String startDateString = input.nextLine();
-        Date startDate = dateFormat.parse(startDateString);
-        System.out.println("Enter end date in format dd/MM/yyyy: ");
+        LocalDate startDate = LocalDate.parse(startDateString, inputFormat);
+        System.out.printf("Enter end date in format %s: \n", OLD_FORMAT);
         String endDateString = input.nextLine();
-        Date endDate = dateFormat.parse(endDateString);
+        LocalDate endDate = LocalDate.parse(endDateString, inputFormat);
         System.out.println("Enter price of the trip: ");
         double price = input.nextDouble();
         System.out.println("Enter the number of the travelers: ");
         int travelers = input.nextInt();
-        currentUser.getTrips().add(new Trip(tripName, destinaton,
-                tripType, startDate, endDate, price,
-                travelers));
+        currentUser.getTrips().add(new Trip); //TODO
         System.out.println("Trip was successfully added. ");
         System.out.println();
     }
