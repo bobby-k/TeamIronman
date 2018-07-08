@@ -24,7 +24,7 @@ public class Accomodation extends TripActivity implements Reservable {
     setLocation(location);
     setAddress(address);
     setPrice(price);
-    setPeriod(ChronoUnit.HOURS.between(startDate,endDate));
+    setPeriod(ChronoUnit.HOURS.between(startDate, endDate));
 
   }
 
