@@ -9,12 +9,21 @@ import com.telerikacademy.users.User;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class Application {
-    //variables????
-    Scanner input = new Scanner(System.in);
-    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+  // private final static String DATE_FORMAT = "dd-MM-yyyy";
+  //private final static String TIME_FORMAT = "HH:mm";
+  private final static String OLD_FORMAT = "HH:mm yyyy/MM/dd";
+  //private final static String NEW_FORMAT = "yyyy/MM/dd HH:mm";
+
+  //SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+  DateTimeFormatter inputFormat= DateTimeFormatter.ofPattern(OLD_FORMAT);
+  //DateTimeFormatter outputFormat= DateTimeFormatter.ofPattern(NEW_FORMAT);
+  //DateTimeFormatter timeFormatter= DateTimeFormatter.ofPattern(TIME_FORMAT);
+    private Scanner input = new Scanner(System.in);
+    private SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
     private String name;
     private User currentUser;
     private List<User> users;
