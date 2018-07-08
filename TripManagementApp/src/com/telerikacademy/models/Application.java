@@ -12,9 +12,9 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Application {
-    //variables
-    private Scanner input = new Scanner(System.in);
-    private SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+    //variables????
+    Scanner input = new Scanner(System.in);
+    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
     private String name;
     private User currentUser;
     private List<User> users;
