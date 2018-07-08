@@ -169,15 +169,24 @@ public class Application {
         currentUser.getTrips().add(new Trip(tripName, destinaton,
                 tripType, startDate, endDate, price,
                 travelers));
+        System.out.println("Trip was successfully added. ");
+        System.out.println();
     }
 
     public void viewTrips() {
-        String result = "";
-        for (int i = 0; i < currentUser.getTrips().size(); i++) {
-            int index = i + 1;
-            result += "Trip " + index + ": " + currentUser.getTrips().get(i).toString() +"\n";
+        StringBuilder stringBuilder = new StringBuilder();
+
+        for (Trip trip : currentUser.getTrips()) {
+            stringBuilder.append(trip.toString()).append("\n");
         }
+        String result = stringBuilder.toString();
         System.out.println(result);
+    }
+
+    public void clearTrips() {
+        currentUser.getTrips().clear();
+        System.out.println("Trips were successfully cleared. ");
+        System.out.println();
     }
 
     public void createTripActivity() throws ParseException {

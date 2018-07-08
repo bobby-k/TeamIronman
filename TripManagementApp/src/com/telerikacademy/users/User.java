@@ -27,6 +27,7 @@ public class User {
     private String email;
     private List<Trip> trips;
 
+
     //constructors
     public User(String account, String password, String fullName, String email) throws IncorrectInputException {
         setAccount(account);

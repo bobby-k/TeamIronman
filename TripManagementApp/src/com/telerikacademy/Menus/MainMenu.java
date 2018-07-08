@@ -16,7 +16,7 @@ public class MainMenu extends Menu {
     @Override
     public void printMenu() {
         String[] options = {"Option 1: Create new trip",
-                "Option 2: Edit trip",
+                "Option 2: Clear trips",
                 "Option 3: View trips",
                 "Option 4: Logout",
                 "Option 5: Exit",
@@ -40,7 +40,8 @@ public class MainMenu extends Menu {
                 selectOptions();
                 break;
             case 2:
-                //do something in future
+                getApp().clearTrips();
+                selectOptions();
                 break;
             case 3:
                 getApp().viewTrips();
