@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
-public class Accomodation extends TripActivity implements Reservable,Payable {
+public class Accomodation extends TripActivity implements Reservable {
   private String location;
   private String address;
   private double price;
@@ -71,8 +71,5 @@ public class Accomodation extends TripActivity implements Reservable,Payable {
 
   }
 
-  @Override
-  public void receivePaymentDetails() {
 
-  }
 }
