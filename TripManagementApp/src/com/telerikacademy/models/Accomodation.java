@@ -2,6 +2,7 @@ package com.telerikacademy.models;
 
 import com.telerikacademy.enumerations.AccomodationType;
 
+import java.io.PrintStream;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -63,7 +64,14 @@ public class Accomodation extends TripActivity implements Reservable {
 
   @Override
   public void printInfo() {
-
+    System.out.printf("Start: %s\n", this.getStartTime());
+    System.out.printf("End: %s\n", this.getEndTime());
+    System.out.printf("Period: %s\n", this.getPeriod());
+    System.out.printf("Name: %s\n", this.getName());
+    System.out.printf("Location: %s\n", this.getLocation());
+    System.out.printf("Address: %s\n", this.getAddress());
+    System.out.printf("Price: %s\n", this.getPrice());
+    System.out.printf("Accomodation Type: %s\n", this.getAccomodationType());
   }
 
   @Override

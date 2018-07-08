@@ -38,6 +38,11 @@ public class LeisureAndFreeTimeActivity extends  TripActivity implements Attenda
 
   @Override
   public void printInfo() {
-
+    System.out.printf("Start: %s\n", this.getStartTime());
+    System.out.printf("End: %s\n", this.getEndTime());
+    System.out.printf("Period: %s\n", this.getPeriod());
+    System.out.printf("Name: %s\n", this.getName());
+    System.out.printf("Leisure Activity Type: %s\n", this.getLeisureActivityType());
+    System.out.printf("Price: %s\n", this.getPrice());
   }
 }

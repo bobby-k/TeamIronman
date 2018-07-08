@@ -83,6 +83,17 @@ public class Transportation extends TripActivity {
 
   @Override
   public void printInfo() {
+    System.out.printf("Start: %s\n", this.getStartTime());
+    System.out.printf("End: %s\n", this.getEndTime());
+    System.out.printf("From: %s\n", this.getStartLocation());
+    System.out.printf("To: %s\n", this.getEndLocation());
+    System.out.printf("Name: %s\n", this.getName());
+    System.out.printf("Distance: %s\n", this.getDistance());
+    System.out.printf("Duration: %s\n", this.getDuration());
+    System.out.printf("Period: %s\n", this.getPeriod());
+    System.out.printf("Transport Type: %s\n", this.transportType);
+    System.out.printf("Ticket Price: %s\n", this.getTicketPrice());
+
 
   }
 }
