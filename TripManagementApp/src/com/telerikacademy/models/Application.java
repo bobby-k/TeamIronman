@@ -152,26 +152,18 @@ public class Application {
         String tripName = input.nextLine();
         System.out.println("Enter destination: ");
         String destinaton = input.nextLine();
-        System.out.println("Enter trip type(Business, Family, Relax): ");
-        String stringTripType = input.nextLine();
-        TripType tripType = null;
-        for(TripType tripType1 : TripType.values()){
-            if(stringTripType.toLowerCase().equals(tripType1.toString().toLowerCase())){
-                tripType = tripType1;
-                break;
-            }
-        }
         System.out.printf("Enter start date in format %s: \n", DATE_FORMAT);
         String startDateString = input.nextLine();
         LocalDate startDate = LocalDate.parse(startDateString, dateFormat);
         System.out.printf("Enter end date in format %s: \n", DATE_FORMAT);
         String endDateString = input.nextLine();
         LocalDate endDate = LocalDate.parse(endDateString, dateFormat);
-        System.out.println("Enter price of the trip: ");
-        double price = input.nextDouble();
+        System.out.println("Enter budget of the trip: ");
+        double budget = input.nextDouble();
         System.out.println("Enter the number of the travelers: ");
         int travelers = input.nextInt();
-        currentUser.getTrips().add(new Trip); //TODO
+        currentUser.getTrips().add(new Trip(tripName, destinaton, startDate,
+                endDate, budget, travelers));
         System.out.println("Trip was successfully added. ");
         System.out.println();
     }

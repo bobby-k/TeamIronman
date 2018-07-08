@@ -50,7 +50,7 @@ public class Trip {
     return tripName;
   }
 
-  public void setTripName(String tripName) {
+  private void setTripName(String tripName) {
     this.tripName = tripName;
   }
 
@@ -58,7 +58,7 @@ public class Trip {
     return tripActivities;
   }
 
-  public void setTripActivities(TreeMap<LocalDateTime, String> tripActivities) {
+  private void setTripActivities(TreeMap<LocalDateTime, String> tripActivities) {
     this.tripActivities = tripActivities;
   }
 
@@ -69,7 +69,7 @@ public class Trip {
     return destination;
   }
 
-  public void setDestination(String destination) {
+  private void setDestination(String destination) {
     this.destination = destination;
   }
 
@@ -78,7 +78,7 @@ public class Trip {
     return startDate;
   }
 
-  public void setStartDate(LocalDate startDate) {
+  private void setStartDate(LocalDate startDate) {
     this.startDate = startDate;
   }
 
@@ -102,7 +102,7 @@ public class Trip {
     return travelers;
   }
 
-  public void setTravelers(int travelers) {
+  private void setTravelers(int travelers) {
     this.travelers = travelers;
   }
 }

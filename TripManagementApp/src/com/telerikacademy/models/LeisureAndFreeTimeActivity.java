@@ -24,7 +24,7 @@ public class LeisureAndFreeTimeActivity extends  TripActivity implements Attenda
     return leisureActivityType;
   }
 
-  public void setLeisureActivityType(LeisureActivityType leisureActivityType) {
+  private void setLeisureActivityType(LeisureActivityType leisureActivityType) {
     this.leisureActivityType = leisureActivityType;
   }
 
@@ -32,7 +32,7 @@ public class LeisureAndFreeTimeActivity extends  TripActivity implements Attenda
     return price;
   }
 
-  public void setPrice(double price) {
+  private void setPrice(double price) {
     this.price = price;
   }
 

@@ -45,7 +45,7 @@ public class Transportation extends TripActivity {
     return startLocation;
   }
 
-  public void setStartLocation(String startLocation) {
+  private void setStartLocation(String startLocation) {
     this.startLocation = startLocation;
   }
 
@@ -53,7 +53,7 @@ public class Transportation extends TripActivity {
     return endLocation;
   }
 
-  public void setEndLocation(String endLocation) {
+  private void setEndLocation(String endLocation) {
     this.endLocation = endLocation;
   }
 
@@ -61,7 +61,7 @@ public class Transportation extends TripActivity {
     return distance;
   }
 
-  public void setDistance(double distance) {
+  private void setDistance(double distance) {
     this.distance = distance;
   }
 
@@ -69,7 +69,7 @@ public class Transportation extends TripActivity {
     return duration;
   }
 
-  public void setDuration(double duration) {
+  private void setDuration(double duration) {
     this.duration = duration;
   }
 
@@ -77,7 +77,7 @@ public class Transportation extends TripActivity {
     return ticketPrice;
   }
 
-  public void setTicketPrice(double ticketPrice) {
+  private void setTicketPrice(double ticketPrice) {
     this.ticketPrice = ticketPrice;
   }
 
