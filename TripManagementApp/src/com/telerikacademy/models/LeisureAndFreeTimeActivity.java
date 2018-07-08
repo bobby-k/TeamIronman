@@ -5,7 +5,7 @@ import com.telerikacademy.enumerations.LeisureActivityType;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public class LeisureAndFreeTimeActivity extends  TripActivity implements Attendable{
+public class LeisureAndFreeTimeActivity extends  TripActivity {
   private LeisureActivityType leisureActivityType;
   private double price;
 

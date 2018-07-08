@@ -1,13 +1,14 @@
 package com.telerikacademy.models;
 
+import com.sun.javafx.binding.StringFormatter;
 import com.telerikacademy.enumerations.AccomodationType;
+import com.telerikacademy.interfaces.AlternativeRouteviewable;
+import com.telerikacademy.interfaces.Reservable;
 
-import java.io.PrintStream;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
-public class Accomodation extends TripActivity implements Reservable {
+public class Accomodation extends TripActivity implements AlternativeRouteviewable {
   private String location;
   private String address;
   private double price;
@@ -74,10 +75,11 @@ public class Accomodation extends TripActivity implements Reservable {
     System.out.printf("Accomodation Type: %s\n", this.getAccomodationType());
   }
 
+
+
   @Override
-  public void addReservationDetails() {
-
+  public void viewAlternativeRoute() {
+    System.out.printf("You will be redirected to alternative route to your %s %s\n",
+        getAccomodationType().toString().toLowerCase(), getAddress());
   }
-
-
 }

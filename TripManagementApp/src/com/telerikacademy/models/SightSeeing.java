@@ -1,11 +1,13 @@
 package com.telerikacademy.models;
 
 import com.telerikacademy.enumerations.SightSeeingType;
+import com.telerikacademy.interfaces.AlternativeRouteviewable;
+import com.telerikacademy.interfaces.OnlinePayable;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public class SightSeeing extends TripActivity implements Payable {
+public class SightSeeing extends TripActivity implements OnlinePayable,AlternativeRouteviewable {
   private String address;
   private SightSeeingType sightSeeingType;
   private double ticketPrice;
@@ -60,6 +62,13 @@ public class SightSeeing extends TripActivity implements Payable {
 
   @Override
   public void receivePaymentDetails() {
+    System.out.printf("Your online payment is confirmed.\nSuccessfully paid %.2f for visiting %s \n", getTicketPrice(),getName());
 
+  }
+
+  @Override
+  public void viewAlternativeRoute() {
+    System.out.printf("You will be redirected to alternative route to your %s %s\n",
+        getSightSeeingType().toString().toLowerCase(), getAddress());
   }
 }

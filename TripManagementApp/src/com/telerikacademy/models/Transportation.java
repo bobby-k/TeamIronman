@@ -1,12 +1,13 @@
 package com.telerikacademy.models;
 
 import com.telerikacademy.enumerations.VehicleType;
+import com.telerikacademy.interfaces.OnlinePayable;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
-public class Transportation extends TripActivity {
+public class Transportation extends TripActivity implements OnlinePayable {
   private VehicleType transportType;
   private String startLocation;
   private String endLocation;
@@ -94,6 +95,13 @@ public class Transportation extends TripActivity {
     System.out.printf("Transport Type: %s\n", this.transportType);
     System.out.printf("Ticket Price: %s\n", this.getTicketPrice());
 
+
+  }
+
+  @Override
+  public void receivePaymentDetails() {
+    System.out.printf("Your online payment is confirmed.Successfully paid %.2f for travelling from %s to %s",
+        getTicketPrice(),getStartLocation(),getEndLocation());
 
   }
 }

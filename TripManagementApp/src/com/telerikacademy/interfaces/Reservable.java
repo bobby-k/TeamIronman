@@ -1,4 +1,4 @@
-package com.telerikacademy.models;
+package com.telerikacademy.interfaces;
 
 public interface Reservable {
   //
