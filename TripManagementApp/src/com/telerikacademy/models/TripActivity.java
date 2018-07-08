@@ -54,7 +54,7 @@ public abstract class TripActivity {
     return period;
   }
 
-  public void setPeriod(long period) {
+  private void setPeriod(long period) {
     this.period = period;
   }
   //public abstract void getNotification();

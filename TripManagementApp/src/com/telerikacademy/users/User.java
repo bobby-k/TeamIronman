@@ -1,13 +1,20 @@
 package com.telerikacademy.users;
 
 
+import com.telerikacademy.enumerations.TripType;
 import com.telerikacademy.exceptions.IncorrectInputException;
 import com.telerikacademy.models.Trip;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 public class User {
+    private Scanner scan = new Scanner(System.in);
     //constants
     private static final int MIN_ACCOUNT_LENGTH = 7;
     private static final int MAX_ACCOUNT_LENGTH = 20;
@@ -91,5 +98,7 @@ public class User {
     private void setTrips(List<Trip> trips) {
         this.trips = trips;
     }
+
+
 }
 

@@ -2,6 +2,7 @@ package com.telerikacademy.menus;
 
 import com.telerikacademy.models.Application;
 
+import java.text.ParseException;
 import java.util.Scanner;
 
 public class LoginMenu extends Menu {
@@ -17,7 +18,7 @@ public class LoginMenu extends Menu {
         String[] options = {"Option 1: Login",
                 "Option 2: Sign up",
                 "Option 3: Exit",
-                "Insert a digit to select menu option:"};
+                "Insert a digit to select menu option: "};
 
         for (int i = 0; i < options.length; i++) {
             System.out.println(options[i]);
@@ -26,7 +27,7 @@ public class LoginMenu extends Menu {
     }
 
     @Override
-    public void selectOptions() {
+    public void selectOptions() throws ParseException {
         int option = 0;
         while (option <= 0 || option > 3) {
             printMenu();
@@ -37,10 +38,10 @@ public class LoginMenu extends Menu {
             getApp().logIn();
                 break;
             case 2:
-                //do something
+                getApp().signUp();
                 break;
             case 3:
-                //do something
+                System.exit(0);
                 break;
 
         }

@@ -3,6 +3,8 @@ package com.telerikacademy.menus;
 
 import com.telerikacademy.models.Application;
 
+import java.text.ParseException;
+
 public abstract class Menu {
     private Application app;
 
@@ -16,7 +18,7 @@ public abstract class Menu {
 
     public abstract void printMenu();
 
-    public abstract void selectOptions();
+    public abstract void selectOptions() throws ParseException;
 
 
 }

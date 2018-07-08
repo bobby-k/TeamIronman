@@ -1,18 +1,17 @@
 package com.telerikacademy.models;
 
+import com.telerikacademy.enumerations.TripType;
 import com.telerikacademy.exceptions.IncorrectInputException;
 import com.telerikacademy.menus.LoginMenu;
 import com.telerikacademy.menus.MainMenu;
 import com.telerikacademy.users.User;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Application {
-    // TUK SE NAMIRAT GLAVNITE METODI
     //variables
     private Scanner input = new Scanner(System.in);
     private SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
@@ -69,7 +68,7 @@ public class Application {
     }
 
     //methods
-    public void logIn() {
+    public void logIn() throws ParseException {
         System.out.println("Enter account: ");
         String account = input.nextLine();
         System.out.println("Enter password: ");
@@ -102,7 +101,7 @@ public class Application {
         }
     }
 
-    public void signUp() {
+    public void signUp() throws ParseException {
         System.out.println("Enter account: ");
         String account = input.nextLine();
         System.out.println("Enter password: ");
@@ -136,11 +135,49 @@ public class Application {
         }
     }
 
-    public void logOut() {
+    public void logout() throws ParseException {
         System.out.println("Logout successful! ");
         System.out.println();
         currentUser = null;
         new LoginMenu(this).selectOptions();
+    }
+
+    public void addTrip() throws ParseException {
+        System.out.println("Enter trip name: ");
+        String tripName = input.nextLine();
+        System.out.println("Enter destination: ");
+        String destinaton = input.nextLine();
+        System.out.println("Enter trip type(Business, Family, Relax): ");
+        String stringTripType = input.nextLine();
+        TripType tripType = null;
+        for(TripType tripType1 : TripType.values()){
+            if(stringTripType.toLowerCase().equals(tripType1.toString().toLowerCase())){
+                tripType = tripType1;
+                break;
+            }
+        }
+        System.out.println("Enter start date in format dd/MM/yyyy: ");
+        String startDateString = input.nextLine();
+        Date startDate = dateFormat.parse(startDateString);
+        System.out.println("Enter end date in format dd/MM/yyyy: ");
+        String endDateString = input.nextLine();
+        Date endDate = dateFormat.parse(endDateString);
+        System.out.println("Enter price of the trip: ");
+        double price = input.nextDouble();
+        System.out.println("Enter the number of the travelers: ");
+        int travelers = input.nextInt();
+        currentUser.getTrips().add(new Trip(tripName, destinaton,
+                tripType, startDate, endDate, price,
+                travelers));
+    }
+
+    public void viewTrips() {
+        String result = "";
+        for (int i = 0; i < currentUser.getTrips().size(); i++) {
+            int index = i + 1;
+            result += "Trip " + index + ": " + currentUser.getTrips().get(i).toString() +"\n";
+        }
+        System.out.println(result);
     }
 
     public void createTripActivity() throws ParseException {
@@ -160,7 +197,7 @@ public class Application {
         String startDate = input.nextLine();
         System.out.println("Enter trip's end date in format dd/MM/yyyy: ");
         String endDate = input.nextLine();
-        Trip trip = new Trip(name, dateFormat.parse(startDate), dateFormat.parse(endDate));
+
     }
 
     public void editTrip() {

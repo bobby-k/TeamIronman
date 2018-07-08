@@ -9,11 +9,11 @@ import java.util.Date;
 public class Trip {
 
   private String tripName;
-  private ArrayList<String> destinations;
+  private String destination;
   private TripType tripType;
   private Date startDate;
   private Date endDate;
-  private Budget budget;
+  private double price;
   private Date tripStart;
   private Date tripEnd;
   private ArrayList<TripActivity> eventsList;
@@ -37,12 +37,12 @@ public class Trip {
 
   private int travelers;
 
-  public ArrayList<String> getDestinations() {
-    return destinations;
+  public String getDestinations() {
+    return destination;
   }
 
-  public void setDestinations(ArrayList<String> destinations) {
-    this.destinations = destinations;
+  public void setDestinations(String destinations) {
+    this.destination = destinations;
   }
 
 
@@ -62,21 +62,19 @@ public class Trip {
     this.endDate = endDate;
   }
 
-  public Budget getBudget() {
-    return budget;
+  public double getPrice() {
+    return price;
   }
 
-  public void setBudget(Budget budget) {
-    this.budget = budget;
+  public void setPrice(double price) {
+    this.price = price;
   }
-
-
 
   public Date getTripStart() {
     return tripStart;
   }
 
-  public void setTripStart(Date tripStart) {
+  private void setTripStart(Date tripStart) {
     this.tripStart = tripStart;
   }
 
@@ -84,7 +82,7 @@ public class Trip {
     return tripEnd;
   }
 
-  public void setTripEnd(Date tripEnd) {
+  private void setTripEnd(Date tripEnd) {
     this.tripEnd = tripEnd;
   }
 
@@ -98,11 +96,21 @@ public class Trip {
     setEventsList(new ArrayList<>());
   }
 
+  public Trip(String tripName, String destination, TripType tripType, Date startDate, Date endDate, double price, int travelers) {
+    this.tripName = tripName;
+    this.destination = destination;
+    this.tripType = tripType;
+    this.startDate = startDate;
+    this.endDate = endDate;
+    this.price = price;
+    this.travelers = travelers;
+  }
+
   public String getTripName() {
     return tripName;
   }
 
-  public void setTripName(String tripName) {
+  private void setTripName(String tripName) {
     this.tripName = tripName;
   }
 
@@ -110,7 +118,7 @@ public class Trip {
     return eventsList;
   }
 
-  public void setEventsList(ArrayList<TripActivity> eventsList) {
+  private void setEventsList(ArrayList<TripActivity> eventsList) {
     this.eventsList = eventsList;
   }
 
