@@ -1,9 +1,9 @@
 package com.telerikacademy.models;
 
-import com.sun.javafx.binding.StringFormatter;
+
 import com.telerikacademy.enumerations.AccomodationType;
 import com.telerikacademy.interfaces.AlternativeRouteviewable;
-import com.telerikacademy.interfaces.Reservable;
+
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;

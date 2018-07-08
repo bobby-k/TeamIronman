@@ -13,16 +13,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class Application {
-  // private final static String DATE_FORMAT = "dd-MM-yyyy";
-  //private final static String TIME_FORMAT = "HH:mm";
+
   private final static String DATE_FORMAT = "yyyy/MM/dd";
   private final static String TIME_FORMAT = "HH:mm yyyy/MM/dd";
-  //private final static String NEW_FORMAT = "yyyy/MM/dd HH:mm";
 
-  //SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-
-  //DateTimeFormatter outputFormat= DateTimeFormatter.ofPattern(NEW_FORMAT);
-  //DateTimeFormatter timeFormatter= DateTimeFormatter.ofPattern(TIME_FORMAT);
     private Scanner input = new Scanner(System.in);
     private DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern(DATE_FORMAT);
     private DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern(TIME_FORMAT);
