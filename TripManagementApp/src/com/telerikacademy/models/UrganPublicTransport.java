@@ -2,7 +2,6 @@ package com.telerikacademy.models;
 
 import com.telerikacademy.enumerations.VehicleType;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class UrganPublicTransport extends Transportation {
@@ -22,7 +21,8 @@ public class UrganPublicTransport extends Transportation {
                               String lineNumber,
                               double distanceWalkingToDestination,
                               double distanceWalkingToStation) {
-    super(name, startDate, endDate, transportType, startLocation, endLocation, distance, ticketPrice);
+    super(name, startDate, endDate,
+        transportType, startLocation, endLocation, distance, ticketPrice);
     setLineNumber(lineNumber);
     setDistanceWalkingToDestination(distanceWalkingToDestination);
     setDistanceWalkingToStation(distanceWalkingToStation);
@@ -54,6 +54,6 @@ public class UrganPublicTransport extends Transportation {
 
   @Override
   public void printInfo() {
-    super.printInfo();
+
   }
 }

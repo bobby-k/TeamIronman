@@ -16,7 +16,7 @@ public class Application {
   // private final static String DATE_FORMAT = "dd-MM-yyyy";
   //private final static String TIME_FORMAT = "HH:mm";
   private final static String DATE_FORMAT = "yyyy/MM/dd";
-  private final static String TIME_FORMAT = "yyyy/MM/dd";
+  private final static String TIME_FORMAT = "HH:mm yyyy/MM/dd";
   //private final static String NEW_FORMAT = "yyyy/MM/dd HH:mm";
 
   //SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
@@ -161,10 +161,10 @@ public class Application {
                 break;
             }
         }
-        System.out.printf("Enter start date in format %s: \n", OLD_FORMAT);
+        System.out.printf("Enter start date in format %s: \n", DATE_FORMAT);
         String startDateString = input.nextLine();
         LocalDate startDate = LocalDate.parse(startDateString, dateFormat);
-        System.out.printf("Enter end date in format %s: \n", OLD_FORMAT);
+        System.out.printf("Enter end date in format %s: \n", DATE_FORMAT);
         String endDateString = input.nextLine();
         LocalDate endDate = LocalDate.parse(endDateString, dateFormat);
         System.out.println("Enter price of the trip: ");
