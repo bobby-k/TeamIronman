@@ -13,7 +13,6 @@ public class Main {
   private DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern(DATE_FORMAT);
 
 
-
   public void addTrip() throws InvalidDateFormatException {
     System.out.println("Enter trip name: ");
     String tripName = input.nextLine();
@@ -22,8 +21,6 @@ public class Main {
     System.out.printf("Enter start date in format %s: \n", DATE_FORMAT);
     String startDateString = input.nextLine();
     LocalDate startDate = LocalDate.parse(startDateString, dateFormat);
-
-
     System.out.printf("Enter end date in format %s: \n", DATE_FORMAT);
     String endDateString = input.nextLine();
     LocalDate endDate = LocalDate.parse(endDateString, dateFormat);
@@ -34,5 +31,6 @@ public class Main {
 
     System.out.println("Trip was successfully added. ");
     System.out.println();
+
   }
 }
