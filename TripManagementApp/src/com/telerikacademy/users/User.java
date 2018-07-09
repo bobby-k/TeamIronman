@@ -2,10 +2,13 @@ package com.telerikacademy.users;
 
 import com.telerikacademy.exceptions.IncorrectInputException;
 import com.telerikacademy.models.Trip;
+import com.telerikacademy.models.TripActivity;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class User {
     private Scanner scan = new Scanner(System.in);
@@ -20,7 +23,7 @@ public class User {
     private String fullName;
     private String email;
     private List<Trip> trips;
-
+    private TreeMap<LocalDateTime, TripActivity> tripActivities;
 
     //constructors
     public User(String account, String password, String fullName, String email) throws IncorrectInputException {
@@ -29,6 +32,7 @@ public class User {
         setFullName(fullName);
         setEmail(email);
         setTrips(new ArrayList<>());
+        setTripActivities(new TreeMap<>());
     }
 
     //setters and getters
@@ -92,6 +96,14 @@ public class User {
 
     private void setTrips(List<Trip> trips) {
         this.trips = trips;
+    }
+
+    public TreeMap<LocalDateTime, TripActivity> getTripActivities() {
+        return tripActivities;
+    }
+
+    public void setTripActivities(TreeMap<LocalDateTime, TripActivity> tripActivities) {
+        this.tripActivities = tripActivities;
     }
 
     //todo

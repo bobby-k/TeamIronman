@@ -1,13 +1,13 @@
 package com.telerikacademy.models;
 
-import com.telerikacademy.enumerations.VehicleType;
+import com.telerikacademy.enumerations.TransportationType;
 import com.telerikacademy.interfaces.OnlinePayable;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
 public class Transportation extends TripActivity implements OnlinePayable {
-    private VehicleType transportType;
+    private TransportationType transportType;
     private String startLocation;
     private String endLocation;
     private double distance;
@@ -18,7 +18,7 @@ public class Transportation extends TripActivity implements OnlinePayable {
     public Transportation(String name,
                           LocalDateTime startDate,
                           LocalDateTime endDate,
-                          VehicleType transportType,
+                          TransportationType transportType,
                           String startLocation,
                           String endLocation,
                           double distance,
@@ -32,11 +32,11 @@ public class Transportation extends TripActivity implements OnlinePayable {
         setTicketPrice(ticketPrice);
     }
 
-    public VehicleType getTransportType() {
+    public TransportationType getTransportType() {
         return transportType;
     }
 
-    public void setTransportType(VehicleType transportType) {
+    public void setTransportType(TransportationType transportType) {
         this.transportType = transportType;
     }
 

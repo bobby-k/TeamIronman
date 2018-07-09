@@ -1,10 +1,11 @@
 package com.telerikacademy.enumerations;
 
-public enum LeisureActivityType {
-    BARS("Bars"), PARKS("Parks"), GARDEN("Garden"), SPORTS("Sports"), SHOPPING("Shopping");
+public enum TransportationType {
+    AIRPLANE("Airplane"), TRAIN("Train"), BUS("Bus"), CRUISE("Cruise"), CAR("Car"), OTHER("Other");
+
     private final String name;
 
-    LeisureActivityType(String name) {
+    TransportationType(String name) {
         this.name = name;
     }
 
@@ -12,4 +13,5 @@ public enum LeisureActivityType {
     public String toString() {
         return this.name;
     }
+
 }

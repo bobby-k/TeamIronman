@@ -1,5 +1,16 @@
 package com.telerikacademy.enumerations;
 
 public enum SightSeeingType {
-  HISTORIC_SITES,ICONIC_BUILDING,LANDMARK,MUSEUM,GALLERY,CASTLE,NATURAL_FORMATION,
+    LANDMARK("Landmark"), MUSEUM("Museum"), GALLERY("Gallery"), CASTLE("Castle");
+
+    private final String name;
+
+    SightSeeingType(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return this.name;
+    }
 }

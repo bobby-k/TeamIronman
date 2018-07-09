@@ -63,7 +63,7 @@ public class EditLastCreatedTripMenu extends Menu {
                 selectOptions();
                 break;
             case 7:
-                //TODO
+                getApp().goToTripActivityMenu();
                 break;
             case 8:
                 getApp().backToMainMenu();

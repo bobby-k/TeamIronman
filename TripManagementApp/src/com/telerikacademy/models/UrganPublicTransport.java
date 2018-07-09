@@ -1,6 +1,6 @@
 package com.telerikacademy.models;
 
-import com.telerikacademy.enumerations.VehicleType;
+import com.telerikacademy.enumerations.TransportationType;
 
 import java.time.LocalDateTime;
 
@@ -13,7 +13,7 @@ public class UrganPublicTransport extends Transportation {
     public UrganPublicTransport(String name,
                                 LocalDateTime startDate,
                                 LocalDateTime endDate,
-                                VehicleType transportType,
+                                TransportationType transportType,
                                 String startLocation,
                                 String endLocation,
                                 double distance,
