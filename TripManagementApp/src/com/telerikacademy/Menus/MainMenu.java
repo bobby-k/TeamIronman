@@ -12,14 +12,15 @@ public class MainMenu extends Menu {
         super(app);
     }
 
-
     @Override
     public void printMenu() {
         String[] options = {"Option 1: Create new trip",
-                "Option 2: Clear trips",
-                "Option 3: View trips",
-                "Option 4: Logout",
-                "Option 5: Exit",
+                "Option 2: Clear all trips",
+                "Option 3: Edit last created trip",
+                "Option 4: View last created trip",
+                "Option 5: View History",
+                "Option 6: Logout",
+                "Option 7: Exit",
                 "Insert a digit to select menu option: "};
 
         for (int i = 0; i < options.length; i++) {
@@ -30,13 +31,13 @@ public class MainMenu extends Menu {
     @Override
     public void selectOptions() throws ParseException {
         int option = 0;
-        while (option <= 0 || option > 6) {
+        while (option <= 0 || option > 7) {
             printMenu();
             option = sc.nextInt();
         }
         switch (option) {
             case 1:
-                getApp().addTrip();
+                getApp().createNewTrip();
                 selectOptions();
                 break;
             case 2:
@@ -44,20 +45,26 @@ public class MainMenu extends Menu {
                 selectOptions();
                 break;
             case 3:
-                getApp().viewTrips();
-                selectOptions();
+
                 break;
             case 4:
-                getApp().logout();
+                if (getApp().getCurrentUser().getTrips().isEmpty()) {
+                    System.out.println("No trips were added. ");
+                    System.out.println();
+                } else {
+                getApp().viewLastCreatedTrip();
+                selectOptions();
+                break;}
+            case 5:
+                getApp().viewHistory();
+                selectOptions();
                 break;
             case 6:
+                getApp().logout();
+                break;
+            case 7:
                 System.exit(0);
                 break;
-
         }
-
-
     }
 }
-
-

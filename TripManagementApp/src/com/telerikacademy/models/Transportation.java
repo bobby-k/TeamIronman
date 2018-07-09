@@ -3,7 +3,6 @@ package com.telerikacademy.models;
 import com.telerikacademy.enumerations.VehicleType;
 import com.telerikacademy.interfaces.OnlinePayable;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 

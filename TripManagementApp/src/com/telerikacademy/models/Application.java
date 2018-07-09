@@ -1,21 +1,19 @@
 package com.telerikacademy.models;
 
-import com.telerikacademy.enumerations.TripType;
 import com.telerikacademy.exceptions.IncorrectInputException;
 import com.telerikacademy.menus.LoginMenu;
 import com.telerikacademy.menus.MainMenu;
 import com.telerikacademy.users.User;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class Application {
 
-  private final static String DATE_FORMAT = "yyyy/MM/dd";
-  private final static String TIME_FORMAT = "HH:mm yyyy/MM/dd";
+    private final static String DATE_FORMAT = "yyyy/MM/dd";
+    private final static String TIME_FORMAT = "HH:mm yyyy/MM/dd";
 
     private Scanner input = new Scanner(System.in);
     private DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern(DATE_FORMAT);
@@ -39,7 +37,6 @@ public class Application {
     private void setInput(Scanner input) {
         this.input = input;
     }
-
 
 
     public String getName() {
@@ -66,8 +63,10 @@ public class Application {
         this.users = users;
     }
 
-    //methods
+    //methods for LoginMenu
+    //1
     public void logIn() throws ParseException {
+        System.out.println("LOGIN");
         System.out.println("Enter account: ");
         String account = input.nextLine();
         System.out.println("Enter password: ");
@@ -100,7 +99,10 @@ public class Application {
         }
     }
 
+    //2
     public void signUp() throws ParseException {
+        System.out.println("Press ENTER to create new account. ");
+        input.nextLine();
         System.out.println("Enter account: ");
         String account = input.nextLine();
         System.out.println("Enter password: ");
@@ -128,12 +130,12 @@ public class Application {
                 System.out.println(e.getMessage());
                 signUp();
             }
-
         } else {
             signUp();
         }
     }
 
+    //3
     public void logout() throws ParseException {
         System.out.println("Logout successful! ");
         System.out.println();
@@ -141,7 +143,12 @@ public class Application {
         new LoginMenu(this).selectOptions();
     }
 
-    public void addTrip() throws ParseException {
+    //methods for MainMenu
+
+    //1
+    public void createNewTrip() throws ParseException {
+        System.out.println("Press ENTER to create new trip. ");
+        input.nextLine();
         System.out.println("Enter trip name: ");
         String tripName = input.nextLine();
         System.out.println("Enter destination: ");
@@ -162,44 +169,50 @@ public class Application {
         System.out.println();
     }
 
-    public void viewTrips() {
-        StringBuilder stringBuilder = new StringBuilder();
-
-        for (Trip trip : currentUser.getTrips()) {
-            stringBuilder.append(trip.toString()).append("\n");
-        }
-        String result = stringBuilder.toString();
-        System.out.println(result);
-    }
-
+    //2
     public void clearTrips() {
         currentUser.getTrips().clear();
         System.out.println("Trips were successfully cleared. ");
         System.out.println();
     }
-
-    public void createTripActivity() throws ParseException {
-        System.out.println("Enter Event name: ");
-        String name = input.nextLine();
-        System.out.println("Enter startDate: ");
-        String startDate = input.nextLine();
-        System.out.println("Enter endDate: ");
-        String endDate = input.nextLine();
-        //Event newEvent=new Event(name,dateFormat.parse(startDate),dateFormat.parse(endDate));
+    
+    //4
+    public void viewLastCreatedTrip() {
+        List<Trip> trips = new ArrayList<>(getCurrentUser().getTrips());
+        Trip trip = trips.get(trips.size() - 1);
+        System.out.printf("Name: %s\n" +
+                "Destination: %s\n" +
+                "Start: %s\n" +
+                "End: %s\n" +
+                "Budget: %.2f\n" +
+                "Travelers: %d\n",
+                trip.getTripName(),
+                trip.getDestination(),
+                trip.getStartDate().toString(),
+                trip.getEndDate().toString(),
+                trip.getBudget(),
+                trip.getTravelers());
+        System.out.println();
     }
 
-    public void createTrip() throws ParseException {
-        System.out.println("Enter Trip name: ");
-        String name = input.nextLine();
-        System.out.println("Enter trip start date in format dd/MM/yyyy: ");
-        String startDate = input.nextLine();
-        System.out.println("Enter trip's end date in format dd/MM/yyyy: ");
-        String endDate = input.nextLine();
-
+    //5
+    public void viewHistory() {
+        List<Trip> printTrips = new ArrayList<>(getCurrentUser().getTrips());
+        for (int i = 0; i < printTrips.size(); i++) {
+            Trip trip = printTrips.get(i);
+            System.out.printf("Trip name: %s\n" +
+                            "Destination: %s\n" +
+                            "Start: %s\n" +
+                            "End: %s\n",
+                    trip.getTripName(),
+                    trip.getDestination(),
+                    trip.getStartDate().toString(),
+                    trip.getEndDate().toString());
+            System.out.println();
+        }
     }
 
     public void editTrip() {
 
     }
-
 }

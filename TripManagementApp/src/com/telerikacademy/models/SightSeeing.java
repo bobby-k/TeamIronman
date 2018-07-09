@@ -4,7 +4,6 @@ import com.telerikacademy.enumerations.SightSeeingType;
 import com.telerikacademy.interfaces.AlternativeRouteviewable;
 import com.telerikacademy.interfaces.OnlinePayable;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class SightSeeing extends TripActivity implements OnlinePayable,AlternativeRouteviewable {

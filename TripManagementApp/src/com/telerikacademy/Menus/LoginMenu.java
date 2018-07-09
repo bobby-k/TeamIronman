@@ -6,12 +6,11 @@ import java.text.ParseException;
 import java.util.Scanner;
 
 public class LoginMenu extends Menu {
-    Scanner sc = new Scanner(System.in);
+    private Scanner sc = new Scanner(System.in);
 
     public LoginMenu(Application app) {
         super(app);
     }
-
 
     @Override
     public void printMenu() {
@@ -23,7 +22,6 @@ public class LoginMenu extends Menu {
         for (int i = 0; i < options.length; i++) {
             System.out.println(options[i]);
         }
-
     }
 
     @Override
@@ -35,7 +33,7 @@ public class LoginMenu extends Menu {
         }
         switch (option) {
             case 1:
-            getApp().logIn();
+                getApp().logIn();
                 break;
             case 2:
                 getApp().signUp();
@@ -43,10 +41,6 @@ public class LoginMenu extends Menu {
             case 3:
                 System.exit(0);
                 break;
-
         }
     }
-
 }
-
-

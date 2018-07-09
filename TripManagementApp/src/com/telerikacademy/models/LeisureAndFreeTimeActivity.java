@@ -2,7 +2,6 @@ package com.telerikacademy.models;
 
 import com.telerikacademy.enumerations.LeisureActivityType;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class LeisureAndFreeTimeActivity extends  TripActivity {

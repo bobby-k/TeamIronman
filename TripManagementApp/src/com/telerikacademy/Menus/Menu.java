@@ -8,7 +8,7 @@ import java.text.ParseException;
 public abstract class Menu {
     private Application app;
 
-    public Menu(Application app){
+    public Menu(Application app) {
         this.app = app;
     }
 
@@ -19,6 +19,4 @@ public abstract class Menu {
     public abstract void printMenu();
 
     public abstract void selectOptions() throws ParseException;
-
-
 }
