@@ -29,14 +29,13 @@ public class Trip {
         setTripActivities(new TreeMap<>());
         setBudget(budget);
         setTravelers(travelers);
-
     }
 
     public String getTripName() {
         return tripName;
     }
 
-    private void setTripName(String tripName) {
+    public void setTripName(String tripName) {
         this.tripName = tripName;
     }
 
@@ -44,7 +43,7 @@ public class Trip {
         return tripActivities;
     }
 
-    private void setTripActivities(TreeMap<LocalDateTime, TripActivity> tripActivities) {
+    public void setTripActivities(TreeMap<LocalDateTime, TripActivity> tripActivities) {
         this.tripActivities = tripActivities;
     }
 
@@ -53,7 +52,7 @@ public class Trip {
         return destination;
     }
 
-    private void setDestination(String destination) {
+    public void setDestination(String destination) {
         this.destination = destination;
     }
 
@@ -62,7 +61,7 @@ public class Trip {
         return startDate;
     }
 
-    private void setStartDate(LocalDate startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
 
@@ -70,7 +69,7 @@ public class Trip {
         return endDate;
     }
 
-    private void setEndDate(LocalDate endDate) {
+    public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
 
@@ -86,7 +85,7 @@ public class Trip {
         return travelers;
     }
 
-    private void setTravelers(int travelers) {
+    public void setTravelers(int travelers) {
         this.travelers = travelers;
     }
 

@@ -1,6 +1,7 @@
 package com.telerikacademy.models;
 
 import com.telerikacademy.exceptions.IncorrectInputException;
+import com.telerikacademy.menus.EditLastCreatedTripMenu;
 import com.telerikacademy.menus.LoginMenu;
 import com.telerikacademy.menus.MainMenu;
 import com.telerikacademy.users.User;
@@ -175,17 +176,23 @@ public class Application {
         System.out.println("Trips were successfully cleared. ");
         System.out.println();
     }
-    
+
+    //3
+    public void goToEditLastTripMenu() throws ParseException {
+        System.out.println();
+        new EditLastCreatedTripMenu(this).selectOptions();
+    }
+
     //4
     public void viewLastCreatedTrip() {
         List<Trip> trips = new ArrayList<>(getCurrentUser().getTrips());
         Trip trip = trips.get(trips.size() - 1);
         System.out.printf("Name: %s\n" +
-                "Destination: %s\n" +
-                "Start: %s\n" +
-                "End: %s\n" +
-                "Budget: %.2f\n" +
-                "Travelers: %d\n",
+                        "Destination: %s\n" +
+                        "Start: %s\n" +
+                        "End: %s\n" +
+                        "Budget: %.2f\n" +
+                        "Travelers: %d\n",
                 trip.getTripName(),
                 trip.getDestination(),
                 trip.getStartDate().toString(),
@@ -212,7 +219,68 @@ public class Application {
         }
     }
 
-    public void editTrip() {
+    //method for EditLastCreatedTrip
+    //1
+    public void changeName() {
+        System.out.println("Enter new name: ");
+        String newName = input.nextLine();
+        List<Trip> trips = new ArrayList<>(getCurrentUser().getTrips());
+        Trip lastTrip = trips.get(trips.size() - 1);
+        lastTrip.setTripName(newName);
+    }
 
+    //2
+    public void changeDestination() {
+        System.out.println("Enter new destination: ");
+        String newDestination = input.nextLine();
+        List<Trip> trips = new ArrayList<>(getCurrentUser().getTrips());
+        Trip lastTrip = trips.get(trips.size() - 1);
+        lastTrip.setDestination(newDestination);
+    }
+
+    //3
+    public void changeStartDate() {
+        System.out.printf("Enter new start date in format %s: \n", DATE_FORMAT);
+        input.nextLine();
+        String newStartDate = input.nextLine();
+        LocalDate newStartLocalDate = LocalDate.parse(newStartDate, dateFormat);
+        List<Trip> trips = new ArrayList<>(getCurrentUser().getTrips());
+        Trip lastTrip = trips.get(trips.size() - 1);
+        lastTrip.setStartDate(newStartLocalDate);
+    }
+
+    //4
+    public void changeEndDate() {
+        System.out.printf("Enter new end date in format %s: \n", DATE_FORMAT);
+        input.nextLine();
+        String newEndDate = input.nextLine();
+        LocalDate newEndLocalDate = LocalDate.parse(newEndDate, dateFormat);
+        List<Trip> trips = new ArrayList<>(getCurrentUser().getTrips());
+        Trip lastTrip = trips.get(trips.size() - 1);
+        lastTrip.setEndDate(newEndLocalDate);
+    }
+
+    //5
+    public void changeBudget() {
+        System.out.println("Enter new budget: ");
+        double newBudget = input.nextDouble();
+        List<Trip> trips = new ArrayList<>(getCurrentUser().getTrips());
+        Trip lastTrip = trips.get(trips.size() - 1);
+        lastTrip.setBudget(newBudget);
+    }
+
+    //6
+    public void changeTravelers() {
+        System.out.println("Enter new travelers: ");
+        int newTravelers = input.nextInt();
+        List<Trip> trips = new ArrayList<>(getCurrentUser().getTrips());
+        Trip lastTrip = trips.get(trips.size() - 1);
+        lastTrip.setTravelers(newTravelers);
+    }
+
+    //8
+    public void backToMainMenu() throws ParseException {
+        System.out.println();
+        new MainMenu(this).selectOptions();
     }
 }

@@ -45,16 +45,18 @@ public class MainMenu extends Menu {
                 selectOptions();
                 break;
             case 3:
-
+                getApp().goToEditLastTripMenu();
+                selectOptions();
                 break;
             case 4:
                 if (getApp().getCurrentUser().getTrips().isEmpty()) {
                     System.out.println("No trips were added. ");
                     System.out.println();
                 } else {
-                getApp().viewLastCreatedTrip();
-                selectOptions();
-                break;}
+                    getApp().viewLastCreatedTrip();
+                    selectOptions();
+                    break;
+                }
             case 5:
                 getApp().viewHistory();
                 selectOptions();
